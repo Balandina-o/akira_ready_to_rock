@@ -1,6 +1,10 @@
-import { Actor, vec } from "excalibur";
-import { Resources } from "../../resources";
+/** Модель экспортирует компонент кнопки старта игры. */
+
 import { game } from "@/main";
+
+import { Actor, Color, vec } from "excalibur";
+import { Resources } from "../../resources";
+
 
 export class StartGameBtn extends Actor {
   constructor() {
@@ -16,10 +20,22 @@ export class StartGameBtn extends Actor {
     this.graphics.add(Resources.StartGameBtn.toSprite());
     this.actions.moveBy({ offset: vec(-750, 0), durationMs: 300 });
 
-    this.on('pointerdown', evt => {
+    this.on('pointerenter', event => { // Обработчик события наведения на кнопку
+        // this.actions.scaleBy({scaleOffset: })
+        this.actions.flash(Color.Purple, 100);
+        this.actions.blink(100, 100 );
+        // this.actions.flash(Color.Purple, 100);
+        // this.graphics.add(Resources.AkiraOfficialArt.toSprite());
+    });
+
+    this.on('pointerleave', event => { // Обработчик события потери кнопкой фокуса
+        this.graphics.add(Resources.StartGameBtn.toSprite());
+    });
+
+    this.on('pointerdown', evt => { // Обработчик события клика по кнопке
         Resources.PreviewMusic.stop();
+        // Переходим на страницу с уровнем
         game.goToScene('level');
-        console.log('You clicked the actor @', evt.worldPos.toString());
     });
   }
 }

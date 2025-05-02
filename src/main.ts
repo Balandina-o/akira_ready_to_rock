@@ -2,6 +2,7 @@ import ex, { Color, DisplayMode, Engine, FadeInOut, SolverStrategy, ScreenElemen
 import { loader, Resources } from "./resources";
 import { MainMenu } from "./main-menu";
 import { MyLevel } from "./level";
+import { Bird } from "./bird";
 
 // import { Bird } from './bird';
 // import { Ground } from './ground';
@@ -10,10 +11,10 @@ import { MyLevel } from "./level";
 
 
 export const game = new Engine({
-    width: 800,
-    height: 600,
-    backgroundColor: Color.Red, // Цвет игрового поля
-    displayMode: DisplayMode.FitScreenAndFill,
+  width: 1200, // the width of the canvas
+  height: 765, // the height of the canvas
+
+  displayMode: DisplayMode.Fixed, // the display mode
     pixelArt: true, // pixelArt will turn on the correct settings to render pixel art without jaggies or shimmering artifacts
     scenes: {
         start: {

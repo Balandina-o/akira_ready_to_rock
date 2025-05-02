@@ -1,12 +1,21 @@
 import { DefaultLoader, Engine, ExcaliburGraphicsContext, Scene, SceneActivationContext } from "excalibur";
 import { Player } from "./player";
 import { Resources } from "./resources";
+import { Bird } from "./bird";
 
 export class MyLevel extends Scene {
+    bird = new Bird(this);
+    showStartInstructions() {
+        this.bird.start();
+    }
     override onInitialize(engine: Engine): void {
         // Scene.onInitialize is where we recommend you perform the composition for your game
         const player = new Player();
+        const bird = new Bird( this );
         this.add(player); // Actors need to be added to a scene to be drawn
+        this.add(this.bird);
+        
+        this.showStartInstructions();
     }
 
     override onPreLoad(loader: DefaultLoader): void {

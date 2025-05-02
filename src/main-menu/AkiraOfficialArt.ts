@@ -22,8 +22,8 @@ export class AkiraOfficialArt extends Actor {
       // https://github.com/excaliburjs/excalibur-extension/
       // Chrome: https://chromewebstore.google.com/detail/excalibur-dev-tools/dinddaeielhddflijbbcmpefamfffekc
       // Firefox: https://addons.mozilla.org/en-US/firefox/addon/excalibur-dev-tools/
-      name: 'Player',
-      pos: vec(0, 350),
+      name: 'AkiraOfficialArt',
+      pos: vec(0, 400),
       width: 50,
       height: 50,
       // anchor: vec(0, 0), // Actors default center colliders and graphics with anchor (0.5, 0.5)
@@ -44,7 +44,7 @@ export class AkiraOfficialArt extends Actor {
 
     // Actions are useful for scripting common behavior, for example patrolling enemies
     // this.actions.delay(2000);
-    this.actions.moveBy({ offset: vec(80, 0), durationMs: 300 })
+    this.actions.moveBy({ offset: vec(230, 0), durationMs: 300 })
 
     // Sometimes you want to click on an actor!
     this.on('pointerdown', evt => {
@@ -52,6 +52,12 @@ export class AkiraOfficialArt extends Actor {
       // if (true) {
       //   evt.cancel();
       // }
+
+
+      WebAudio.unlock();
+      Resources.PreviewMusic.loop = true;
+      Resources.PreviewMusic.play();
+
       console.log('You clicked the actor @', evt.worldPos.toString());
     });
   }
