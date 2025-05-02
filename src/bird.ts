@@ -14,12 +14,8 @@ export class Bird extends ex.Actor {
     rightAnimation!: ex.Animation;
     constructor(private level: MyLevel) {
         super({
-            pos: ex.vec(200, 300),
-            radius: 8,
-            // rotating box double counts
-            // width: 16,
-            // height: 16,
-            color: ex.Color.Yellow
+            name: 'Player',
+            pos: ex.vec(150, 550)
         });
     }
 
@@ -27,10 +23,10 @@ export class Bird extends ex.Actor {
         const spriteSheet = ex.SpriteSheet.fromImageSource({
             image: Resources.Sword,
             grid: {
-                rows: 1,
-                columns: 4,
-                spriteWidth: 32,
-                spriteHeight: 32,
+                rows: 8,
+                columns: 9,
+                spriteWidth: 25,
+                spriteHeight: 65,
             }
         });
 

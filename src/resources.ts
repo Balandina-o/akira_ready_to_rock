@@ -1,12 +1,11 @@
 import { DefaultLoader, ImageSource, ImageWrapping, Loader, Sound, WebAudio } from "excalibur";
 
-import swordPath from './images/sword.png';
-import akiraOfficialArt from './images/akira_preview.jpg';
+import swordPath from './images/josuke.png';
+import akiraOfficialArt from './images/akira_preview.png';
 import menuBackground from './images/menu_background.png';
 import gameLogo from './images/game_logo.png';
 import startGameBtn from './images/start_game_btn.png';
-
-import gifTest from './images/gif_test.gif';
+import startGameBtnHover from './images/start_game_btn_hover.png';
 
 import backgroundPreviewMusicPath from './sounds/rhchp_can_not_stop.ogg';
 import backgroundLevelMusicPath from './sounds/the_strokes_reptilia_instrumental.ogg';
@@ -22,8 +21,7 @@ export const Resources = {
 
   GameLogo: new ImageSource(gameLogo),
   StartGameBtn: new ImageSource(startGameBtn),
-
-  GifTest: new ImageSource(gifTest),
+  StartGameBtnHover: new ImageSource(startGameBtnHover),
 
   PreviewMusic: new Sound(backgroundPreviewMusicPath),
   BackgroundMusic: new Sound(backgroundLevelMusicPath)

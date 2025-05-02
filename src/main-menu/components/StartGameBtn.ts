@@ -2,7 +2,7 @@
 
 import { game } from "@/main";
 
-import { Actor, Color, vec } from "excalibur";
+import { Actor, vec } from "excalibur";
 import { Resources } from "../../resources";
 
 
@@ -10,7 +10,7 @@ export class StartGameBtn extends Actor {
   constructor() {
     super({
       name: 'StartGameBtn',
-      pos: vec(1500, 250),
+      pos: vec(1500, 550),
       width: 20,
       height: 20
     });
@@ -18,14 +18,10 @@ export class StartGameBtn extends Actor {
 
   override onInitialize() {
     this.graphics.add(Resources.StartGameBtn.toSprite());
-    this.actions.moveBy({ offset: vec(-750, 0), durationMs: 300 });
+    this.actions.moveBy({ offset: vec(-600, 0), durationMs: 300 });
 
     this.on('pointerenter', event => { // Обработчик события наведения на кнопку
-        // this.actions.scaleBy({scaleOffset: })
-        this.actions.flash(Color.Purple, 100);
-        this.actions.blink(100, 100 );
-        // this.actions.flash(Color.Purple, 100);
-        // this.graphics.add(Resources.AkiraOfficialArt.toSprite());
+        this.graphics.add(Resources.StartGameBtnHover.toSprite());
     });
 
     this.on('pointerleave', event => { // Обработчик события потери кнопкой фокуса

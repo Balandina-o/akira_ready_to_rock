@@ -23,9 +23,9 @@ export class AkiraOfficialArt extends Actor {
       // Chrome: https://chromewebstore.google.com/detail/excalibur-dev-tools/dinddaeielhddflijbbcmpefamfffekc
       // Firefox: https://addons.mozilla.org/en-US/firefox/addon/excalibur-dev-tools/
       name: 'AkiraOfficialArt',
-      pos: vec(0, 400),
-      width: 50,
-      height: 50,
+      pos: vec(0, 370),
+      width: 1,
+      height: 1,
       // anchor: vec(0, 0), // Actors default center colliders and graphics with anchor (0.5, 0.5)
       // collisionType: CollisionType.Active, // Collision Type Active means this participates in collisions read more https://excaliburjs.com/docs/collisiontypes
     });
@@ -44,20 +44,10 @@ export class AkiraOfficialArt extends Actor {
 
     // Actions are useful for scripting common behavior, for example patrolling enemies
     // this.actions.delay(2000);
-    this.actions.moveBy({ offset: vec(230, 0), durationMs: 300 })
+    this.actions.moveBy({ offset: vec(290, 0), durationMs: 300 })
 
     // Sometimes you want to click on an actor!
     this.on('pointerdown', evt => {
-      // Pointer events tunnel in z order from the screen down, you can cancel them!
-      // if (true) {
-      //   evt.cancel();
-      // }
-
-
-      WebAudio.unlock();
-      Resources.PreviewMusic.loop = true;
-      Resources.PreviewMusic.play();
-
       console.log('You clicked the actor @', evt.worldPos.toString());
     });
   }
