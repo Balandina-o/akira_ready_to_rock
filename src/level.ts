@@ -1,5 +1,6 @@
 import { DefaultLoader, Engine, ExcaliburGraphicsContext, Scene, SceneActivationContext } from "excalibur";
 import { Player } from "./player";
+import { Resources } from "./resources";
 
 export class MyLevel extends Scene {
     override onInitialize(engine: Engine): void {
@@ -10,11 +11,14 @@ export class MyLevel extends Scene {
 
     override onPreLoad(loader: DefaultLoader): void {
         // Add any scene specific resources to load
+        // Resources.PreviewMusic.stop();
     }
 
     override onActivate(context: SceneActivationContext<unknown>): void {
         // Called when Excalibur transitions to this scene
         // Only 1 scene is active at a time
+        Resources.BackgroundMusic.loop = true;
+        Resources.BackgroundMusic.play();
     }
 
     override onDeactivate(context: SceneActivationContext): void {
