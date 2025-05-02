@@ -2,7 +2,6 @@ import ex, { Color, DisplayMode, Engine, FadeInOut, SolverStrategy, ScreenElemen
 import { loader, Resources } from "./resources";
 import { MainMenu } from "./main-menu";
 import { MyLevel } from "./level";
-import { Bird } from "./bird";
 
 // import { Bird } from './bird';
 // import { Ground } from './ground';
@@ -22,6 +21,10 @@ export const game = new Engine({
         },
         level: {
           scene: MyLevel,
+          transitions: {
+            in: new FadeInOut({duration: 500, direction: 'in', color: Color.Black}),
+            out: new FadeInOut({duration: 500, direction: 'out', color: Color.Black})
+          }
         }
       },
     physics: {

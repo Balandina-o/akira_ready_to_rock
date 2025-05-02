@@ -4,17 +4,17 @@ import { Resources } from "./resources";
 import { MyLevel } from "./level";
 
 
-export class Bird extends ex.Actor {
+export class Akira extends ex.Actor {
     playing = false;
     jumping = false;
     startSprite!: ex.Sprite;
-    upAnimation!: ex.Animation;
-    downAnimation!: ex.Animation;
     leftAnimation!: ex.Animation;
     rightAnimation!: ex.Animation;
     constructor(private level: MyLevel) {
         super({
-            name: 'Player',
+      name: 'Bird',
+      width: 100,
+      height: 100,
             pos: ex.vec(150, 550)
         });
     }
@@ -33,14 +33,11 @@ export class Bird extends ex.Actor {
         this.startSprite = spriteSheet.getSprite(1, 0);
         this.leftAnimation = ex.Animation.fromSpriteSheet(spriteSheet, [3, 4, 5, 6, 7], 100);
         this.rightAnimation = ex.Animation.fromSpriteSheet(spriteSheet, [3, 4, 5, 6, 7], 100);
-        this.upAnimation = ex.Animation.fromSpriteSheet(spriteSheet, [2, 1, 0], 150, ex.AnimationStrategy.Freeze);
-        this.downAnimation = ex.Animation.fromSpriteSheet(spriteSheet, [0, 1, 2], 150, ex.AnimationStrategy.Freeze);
         
         // Register
         this.graphics.add("left", this.leftAnimation);
         this.graphics.add("right", this.rightAnimation);
-        this.graphics.add('down', this.downAnimation);
-        this.graphics.add('up', this.upAnimation);
+        // this.graphics.add('up', this.upAnimation);
         this.graphics.add('start', this.startSprite);
 
         this.graphics.use('start');

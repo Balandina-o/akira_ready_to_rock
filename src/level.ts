@@ -1,20 +1,28 @@
-import { DefaultLoader, Engine, ExcaliburGraphicsContext, Scene, SceneActivationContext } from "excalibur";
+import { DefaultLoader, Random, Engine, ExcaliburGraphicsContext, Scene, SceneActivationContext, vec } from "excalibur";
 import { Player } from "./player";
 import { Resources } from "./resources";
-import { Bird } from "./bird";
+import { Akira } from "./akira";
+import { LightningsFactory } from "./lightnings-factory";
+import { Lil } from "./lil";
 
 export class MyLevel extends Scene {
-    bird = new Bird(this);
+
+    akira = new Akira(this);
+    random = new Random();
+    lightningFactory = new LightningsFactory(this, this.random, 600);
+
     showStartInstructions() {
-        this.bird.start();
+        this.akira.start();
+        this.lightningFactory.start();
     }
     override onInitialize(engine: Engine): void {
-        // Scene.onInitialize is where we recommend you perform the composition for your game
-        const player = new Player();
-        const bird = new Bird( this );
-        this.add(player); // Actors need to be added to a scene to be drawn
-        this.add(this.bird);
-        
+        const akira = new Akira( this );
+
+        const lil = new Lil(vec(150, 0));
+        this.add(lil);
+
+        this.add(this.akira);
+
         this.showStartInstructions();
     }
 

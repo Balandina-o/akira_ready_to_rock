@@ -7,6 +7,8 @@ import gameLogo from './images/game_logo.png';
 import startGameBtn from './images/start_game_btn.png';
 import startGameBtnHover from './images/start_game_btn_hover.png';
 
+import lightningPoint from './images/lightning.png';
+
 import backgroundPreviewMusicPath from './sounds/rhchp_can_not_stop.ogg';
 import backgroundLevelMusicPath from './sounds/the_strokes_reptilia_instrumental.ogg';
 
@@ -23,6 +25,8 @@ export const Resources = {
   StartGameBtn: new ImageSource(startGameBtn),
   StartGameBtnHover: new ImageSource(startGameBtnHover),
 
+  LightningPoint: new ImageSource(lightningPoint),
+  
   PreviewMusic: new Sound(backgroundPreviewMusicPath),
   BackgroundMusic: new Sound(backgroundLevelMusicPath)
 } as const;

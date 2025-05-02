@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "description": "",
-  "main": "index.js",
+  "homepage": "http://Balandina-o.github.io/akira_ready_to_rock",
+  "main": "main.js",
   "scripts": {
     "test": "npm run build:prod && npx playwright test",
     "test:integration-update": "npx playwright test --update-snapshots",
@@ -12,6 +13,7 @@
     "start": "npm run dev",
     "build:dev": "webpack --config webpack.development.js",
     "build:prod": "webpack --config webpack.production.js",
+    "deploy": "gh-pages -d dist",
     "serve": "serve dist"
   },
   "author": "",
@@ -36,7 +38,6 @@
   "dependencies": {
     "excalibur": "0.30.0-alpha.1295"
   },
-  "homepage": "",
   "repository": {},
   "bugs": {}
 }

@@ -14,57 +14,26 @@ export class MainMenu extends Scene {
         z: 2,
     });
 
-    // scoreLabel = new Label({
-    //     text: 'Score: 0',
-    //     x: 0,
-    //     y: 0,
-    //     z: 2,
-    //     font: new Font({
-    //         size: 20,
-    //         color: Color.White
-    //     }),
-    // });
-
     override onInitialize(engine: Engine): void {
     const menuBackground = new MenuBackground();
-    this.add(menuBackground); // Actors need to be added to a scene to be drawn
     const akiraOfficialArt = new AkiraOfficialArt();
-    this.add(akiraOfficialArt);
     const gameLogo = new GameLogo();
-    this.add(gameLogo); // Actors need to be added to a scene to be drawn
     const startGameBtn = new StartGameBtn();
-    this.add(startGameBtn); // Actors need to be added to a scene to be drawn
 
-    // this.add(this.scoreLabel);
+    this.add(menuBackground); // Actors need to be added to a scene to be drawn
+    this.add(akiraOfficialArt);
+    this.add(gameLogo);
+    this.add(startGameBtn);
+
     this.add(this.startGame);
-
-    // akiraOfficialArt.onInitialize = async() => {
-    //     WebAudio.unlock;
-    //     Resources.PreviewMusic.loop = true;
-    //     Resources.PreviewMusic.play();
-    //     WebAudio.unlock;
-    // }
-    if ( Resources.AkiraOfficialArt.isLoaded ) {
-        // akiraOfficialArt.actions.callMethod( ()=> window.click());
-    }
-
-    // ('pointerdown', evt => {
-    //     WebAudio.unlock();
-    //     Resources.PreviewMusic.loop = true;
-    //     Resources.PreviewMusic.play();
-    //   });
-
-    WebAudio.unlock;
-    Resources.PreviewMusic.loop = true;
-    Resources.PreviewMusic.play();
-    WebAudio.unlock;
     }
     override onPreLoad(loader: DefaultLoader): void {
         // Add any scene specific resources to load
     }
 
     override onActivate(context: SceneActivationContext<unknown>): void {
-        // WebAudio.unlock;
+        Resources.PreviewMusic.loop = true;
+        Resources.PreviewMusic.play();
     }
 
     override onDeactivate(context: SceneActivationContext): void {
