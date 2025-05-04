@@ -15,7 +15,7 @@
 Project Description
 ---
 ### Stack Technologies
-[![Excaliburjs](https://img.shields.io/badge/Excalibur%20-8ed5fa?logo=Webpack\&logoColor=orange)](https://excaliburjs.com/)<br>
+[![Excaliburjs](https://img.shields.io/badge/Excalibur%20-8ed5fa?logo=Excalibur\&logoColor=orange)](https://excaliburjs.com/)<br>
 [![TypeScript](https://img.shields.io/badge/TypeScript%20-007acc?logo=TypeScript\&logoColor=white)](https://www.typescriptlang.org/)<br>
 [![Npm](https://img.shields.io/badge/Npm%20-CC3534?logo=Npm\&logoColor=white)](https://www.typescriptlang.org/)<br>
 [![Webpack](https://img.shields.io/badge/Webpack%20-8ed5fa?logo=Webpack\&logoColor=white)](https://webpack.js.org/)<br>
