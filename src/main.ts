@@ -1,12 +1,17 @@
-import ex, { Color, DisplayMode, Engine, FadeInOut, SolverStrategy, ScreenElement, WebAudio } from "excalibur";
-import { loader, Resources } from "./resources";
+/** Точка входа в программу, базовые настройки игры. */
+// Goal is to keep main.ts small and just enough to configure the engine
+
+import ex, {
+  Color,
+  DisplayMode,
+  Engine,
+  FadeInOut,
+  SolverStrategy
+} from "excalibur";
+
+import { loader } from "./resources";
 import { MainMenu } from "./main-menu";
 import { MyLevel } from "./level";
-
-// import { Bird } from './bird';
-// import { Ground } from './ground';
-
-// Goal is to keep main.ts small and just enough to configure the engine
 
 
 export const game = new Engine({
@@ -14,7 +19,8 @@ export const game = new Engine({
   height: 760, // the height of the canvas
   backgroundColor: Color.fromHex('f6acfc'), // Мигание
   displayMode: DisplayMode.Fixed, // the display mode
-    pixelArt: true, // pixelArt will turn on the correct settings to render pixel art without jaggies or shimmering artifacts
+    pixelArt: true, // pixelArt will turn on the correct settings to render pixel art 
+    // without jaggies or shimmering artifacts
     scenes: {
         start: {
           scene: MainMenu,
@@ -31,7 +37,8 @@ export const game = new Engine({
         solver: SolverStrategy.Realistic,
         substep: 5 // Sub step the physics simulation for more robust simulations
     },
-    // fixedUpdateTimestep: 16 // Turn on fixed update timestep when consistent physic simulation is important
+    // fixedUpdateTimestep: 16
+    // Turn on fixed update timestep when consistent physic simulation is important
 });
 
 game.start('start', { // name of the start scene 'start'

@@ -31,6 +31,7 @@ export class StartGameBtn extends Actor {
     this.on('pointerdown', evt => { // Обработчик события клика по кнопке
         Resources.PreviewMusic.stop();
         // Переходим на страницу с уровнем
+        // Todo Добавить анимацию
         // setTimeout( () => {
           game.goToScene('level');
         // }, 1000)

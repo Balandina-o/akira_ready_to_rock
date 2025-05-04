@@ -1,7 +1,10 @@
+/** Игровая моделька Акиры. */
+
 import * as ex from "excalibur";
 
 import { Resources } from "./resources";
 import { MyLevel } from "./level";
+import { LightningPoint } from "./lightning";
 
 
 export class Akira extends ex.Actor {
@@ -10,18 +13,19 @@ export class Akira extends ex.Actor {
     startSprite!: ex.Sprite;
     leftAnimation!: ex.Animation;
     rightAnimation!: ex.Animation;
+
     constructor(private level: MyLevel) {
         super({
-      name: 'Bird',
-      width: 100,
-      height: 100,
+            name: 'UltraSuperGuitarist',
+            width: 100,
+            height: 100,
             pos: ex.vec(150, 550)
         });
     }
 
     override onInitialize(): void {
         const spriteSheet = ex.SpriteSheet.fromImageSource({
-            image: Resources.Sword,
+            image: Resources.Akira,
             grid: {
                 rows: 8,
                 columns: 9,
@@ -55,30 +59,25 @@ export class Akira extends ex.Actor {
     // Reset x velocity
     this.vel.x = 0;
 
-    // // Player input
-    // if(engine.input.keyboard.isHeld(ex.Keys.Left)) { //.wasPressed
-    //     console.log('1111111111111111');
-    //     this.vel.x = -150;
-    // }
-
-    // if(engine.input.keyboard.isHeld(ex.Keys.Right)) {
-    //     console.log('2222222222');
-    //     this.vel.x = 150;
-    // }
 }
 
+override onCollisionStart(_self: ex.Collider, other: ex.Collider): void {
+    if (other.owner instanceof LightningPoint ) {
+        this.level.incrementScore();
+    }
+}
 
     override onPostUpdate(engine: ex.Engine): void {
         if (!this.playing) return; // если false, то ничего не делать =)
 
            // Player input
     if(engine.input.keyboard.isHeld(ex.Keys.Left)) { //.wasPressed
-        console.log('1111111111111111');
+        //console.log('1111111111111111');
         this.vel.x = -150;
     }
 
     if(engine.input.keyboard.isHeld(ex.Keys.Right)) {
-        console.log('2222222222');
+       // console.log('2222222222');
         this.vel.x = 150;
     }
     }

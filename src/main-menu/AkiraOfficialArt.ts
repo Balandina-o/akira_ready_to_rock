@@ -1,18 +1,19 @@
-import { Actor, Collider, CollisionContact, Engine, Side, vec, WebAudio } from "excalibur";
-import { Resources } from "../resources";
-import { game } from "@/main";
+/** Модель экспортирует картинку с Акирой в главном меню. */
 
-// Actors are the main unit of composition you'll likely use, anything that you want to draw and move around the screen
+// Actors are the main unit of composition you'll likely use,
+// anything that you want to draw and move around the screen
 // is likely built with an actor
 
-// They contain a bunch of useful components that you might use
-// actor.transform
-// actor.motion
-// actor.graphics
-// actor.body
-// actor.collider
-// actor.actions
-// actor.pointer
+import {
+  Actor,
+  Collider,
+  CollisionContact,
+  Engine,
+  Side,
+  vec
+} from "excalibur";
+
+import { Resources } from "../resources";
 
 
 export class AkiraOfficialArt extends Actor {
@@ -27,9 +28,10 @@ export class AkiraOfficialArt extends Actor {
       width: 1,
       height: 1,
       // anchor: vec(0, 0), // Actors default center colliders and graphics with anchor (0.5, 0.5)
-      // collisionType: CollisionType.Active, // Collision Type Active means this participates in collisions read more https://excaliburjs.com/docs/collisiontypes
+      // collisionType: CollisionType.Active,
+      // Collision Type Active means this participates in collisions read more
+      // https://excaliburjs.com/docs/collisiontypes
     });
-    
   }
 
   override onInitialize() {
@@ -43,7 +45,6 @@ export class AkiraOfficialArt extends Actor {
     this.graphics.add(Resources.AkiraOfficialArt.toSprite());
 
     // Actions are useful for scripting common behavior, for example patrolling enemies
-    // this.actions.delay(2000);
     this.actions.moveBy({ offset: vec(290, 0), durationMs: 300 })
     this.actions.moveBy({ offset: vec(100, 0), durationMs: 1000 });
   

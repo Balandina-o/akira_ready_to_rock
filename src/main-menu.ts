@@ -1,7 +1,21 @@
-import { Label, Font, Buttons, Color, DefaultLoader, Engine, ExcaliburGraphicsContext, Scene, SceneActivationContext, WebAudio, ScreenElement } from "excalibur";
-import { Player } from "./player";
+/** Модуль экспортирует главное меню игры. */
+
+import {
+    Label,
+    Font,
+    Buttons,
+    Color,
+    DefaultLoader,
+    Engine,
+    ExcaliburGraphicsContext,
+    Scene,
+    SceneActivationContext,
+    WebAudio,
+    ScreenElement
+} from "excalibur";
+
 import { Resources } from "./resources";
-import { game } from "./main";
+
 import { AkiraOfficialArt } from "./main-menu/AkiraOfficialArt";
 import { GameLogo } from "./main-menu/GameLogo";
 import { MenuBackground } from "./main-menu/MenuBackground";

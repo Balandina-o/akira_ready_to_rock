@@ -1,9 +1,8 @@
-import { DefaultLoader, Random, Engine, ExcaliburGraphicsContext, Scene, SceneActivationContext, vec } from "excalibur";
-import { Player } from "./player";
+import { DefaultLoader, Random, Engine, ExcaliburGraphicsContext, Scene, SceneActivationContext, vec, Label, Font, Color } from "excalibur";
 import { Resources } from "./resources";
 import { Akira } from "./akira";
 import { LightningsFactory } from "./lightnings-factory";
-import { Lil } from "./lil";
+import { LightningPoint } from "./lightning";
 
 export class MyLevel extends Scene {
 
@@ -11,19 +10,38 @@ export class MyLevel extends Scene {
     random = new Random();
     lightningFactory = new LightningsFactory(this, this.random, 600);
 
+    score: number = 0;
+    best: number = 0;
+    scoreLabel = new Label({
+        text: 'Score: 0',
+        x: 0,
+        y: 0,
+        z: 1,
+        font: new Font({
+            size: 20,
+            color: Color.Black
+        })
+    });
+
     showStartInstructions() {
         this.akira.start();
         this.lightningFactory.start();
     }
+
     override onInitialize(engine: Engine): void {
         const akira = new Akira( this );
 
-        const lil = new Lil(vec(150, 0));
+        const lil = new LightningPoint(vec(150, 0));
         this.add(lil);
 
         this.add(this.akira);
+        this.add(this.scoreLabel);
 
         this.showStartInstructions();
+    }
+
+    incrementScore() {
+        this.scoreLabel.text = `Score: ${++this.score}`;
     }
 
     override onPreLoad(loader: DefaultLoader): void {

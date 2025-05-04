@@ -1,5 +1,9 @@
+/** Модель экспортирует лого игры в главном меню. */
+
 import { Actor, vec } from "excalibur";
+
 import { Resources } from "../resources";
+
 
 export class GameLogo extends Actor {
   constructor() {

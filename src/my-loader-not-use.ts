@@ -1,4 +1,7 @@
+/** Кастомный загрузчик игры, пока тут ничего нет... */
+
 import * as ex from 'excalibur';
+
 export class MyLoader extends ex.DefaultLoader {
   override onUpdate(engine: ex.Engine, elapsedMilliseconds: number): void {
     // Perform something every tick, for example collect time elapsed or check 
@@ -6,7 +9,6 @@ export class MyLoader extends ex.DefaultLoader {
   }
   override onDraw(ctx: CanvasRenderingContext2D) {
     // Returns the progress of the loader as a number between [0, 1] inclusive.
-    console.log(this.progress);
   }
   override async onUserAction(): Promise<void> {
     // Return a promise that resolves when the user interacts with the loading screen in some way,

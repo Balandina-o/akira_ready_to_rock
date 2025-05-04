@@ -1,13 +1,15 @@
-import { DefaultLoader, ImageSource, ImageWrapping, Loader, Sound, WebAudio } from "excalibur";
+/** Модель экспортирует ресурсы, задействуемые в игре. */
 
-import swordPath from './images/josuke.png';
-import akiraOfficialArt from './images/akira_preview.png';
-import menuBackground from './images/menu_background.png';
-import gameLogo from './images/game_logo.png';
-import startGameBtn from './images/start_game_btn.png';
-import startGameBtnHover from './images/start_game_btn_hover.png';
+import {ImageSource, Loader, Sound } from "excalibur";
 
-import lightningPoint from './images/lightning.png';
+import AkiraPath from './images/josuke.png';
+import akiraOfficialArtPath from './images/akira_preview.png';
+import menuBackgroundPath from './images/menu_background.png';
+import gameLogoPath from './images/game_logo.png';
+import startGameBtnPath from './images/start_game_btn.png';
+import startGameBtnHoverPath from './images/start_game_btn_hover.png';
+
+import lightningPointPath from './images/lightning.png';
 
 import backgroundPreviewMusicPath from './sounds/rhchp_can_not_stop.ogg';
 import backgroundLevelMusicPath from './sounds/the_strokes_reptilia_instrumental.ogg';
@@ -15,22 +17,22 @@ import backgroundLevelMusicPath from './sounds/the_strokes_reptilia_instrumental
 
 // It is convenient to put your resources in one place
 export const Resources = {
-  Sword: new ImageSource(swordPath),
-  AkiraOfficialArt: new ImageSource(akiraOfficialArt),
-  MenuBackground: new ImageSource(menuBackground, {
-    wrapping: ImageWrapping.Mirror
-  }),
+  Akira: new ImageSource(AkiraPath),
+  AkiraOfficialArt: new ImageSource(akiraOfficialArtPath),
+  MenuBackground: new ImageSource(menuBackgroundPath),
+  // Todo Сделать что-то с фоном. Код ниже не работает {
+  //   wrapping: ImageWrapping.Mirror
+  // })
 
-  GameLogo: new ImageSource(gameLogo),
-  StartGameBtn: new ImageSource(startGameBtn),
-  StartGameBtnHover: new ImageSource(startGameBtnHover),
+  GameLogo: new ImageSource(gameLogoPath),
+  StartGameBtn: new ImageSource(startGameBtnPath),
+  StartGameBtnHover: new ImageSource(startGameBtnHoverPath),
 
-  LightningPoint: new ImageSource(lightningPoint),
+  LightningPoint: new ImageSource(lightningPointPath),
   
   PreviewMusic: new Sound(backgroundPreviewMusicPath),
   BackgroundMusic: new Sound(backgroundLevelMusicPath)
 } as const;
-// So when you type Resources.Sword -> ImageSource
 
 // We build a loader and add all of our resources to the boot loader
 // You can build your own loader by extending DefaultLoader
