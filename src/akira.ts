@@ -17,8 +17,8 @@ export class Akira extends ex.Actor {
     constructor(private level: MyLevel) {
         super({
             name: 'UltraSuperGuitarist',
-            width: 100,
-            height: 100,
+            width: 20,
+            height: 20,
             pos: ex.vec(150, 550)
         });
     }
@@ -64,6 +64,7 @@ export class Akira extends ex.Actor {
 override onCollisionStart(_self: ex.Collider, other: ex.Collider): void {
     if (other.owner instanceof LightningPoint ) {
         this.level.incrementScore();
+        other.owner.kill();
     }
 }
 

@@ -28,22 +28,22 @@ export class LightningsFactory {
         this.timer.start();
     }
 
-    // reset() {
-    //     for (const actor of this.level.actors) {
-    //         if (actor instanceof LightningPoint
-    //         ) {
-    //             actor.kill();
-    //         }
-    //     }
-    // }
+    reset() {
+        for (const actor of this.level.actors) {
+            if (actor instanceof LightningPoint
+            ) {
+                actor.kill();
+            }
+        }
+    }
 
-    // stop() {
-    //     this.timer.stop();
-    //     for (const actor of this.level.actors) {
-    //         if (actor instanceof LightningPoint 
-    //         ) {
-    //             actor.vel = ex.vec(0, 0);
-    //         }
-    //     }
-    // }
+    stop() {
+        this.timer.stop();
+        for (const actor of this.level.actors) {
+            if (actor instanceof LightningPoint 
+            ) {
+                actor.vel = ex.vec(0, 0);
+            }
+        }
+    }
 }
