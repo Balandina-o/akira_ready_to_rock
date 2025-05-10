@@ -12,6 +12,8 @@ import ex, {
 import { loader } from "./resources";
 import { MainMenu } from "./main-menu";
 import { MyLevel } from "./level";
+import { DlcMenu } from "./dlc-menu";
+import { Menu } from "./ui";
 
 
 export const game = new Engine({
@@ -22,8 +24,15 @@ export const game = new Engine({
     pixelArt: true, // pixelArt will turn on the correct settings to render pixel art 
     // without jaggies or shimmering artifacts
     scenes: {
-        start: {
+        mainMenu: {
           scene: MainMenu,
+        },
+        dlcMenu: {
+          scene: DlcMenu,
+          transitions: {
+            in: new FadeInOut({duration: 500, direction: 'in', color: Color.Black}),
+            out: new FadeInOut({duration: 500, direction: 'out', color: Color.Black})
+          }
         },
         level: {
           scene: MyLevel,
@@ -41,7 +50,7 @@ export const game = new Engine({
     // Turn on fixed update timestep when consistent physic simulation is important
 });
 
-game.start('start', { // name of the start scene 'start'
+game.start('mainMenu', { // name of the start scene 'start'
     loader, // Optional loader (but needed for loading images/sounds)
     inTransition: new FadeInOut({ // Optional in transition
         duration: 800,
@@ -49,6 +58,7 @@ game.start('start', { // name of the start scene 'start'
         color: Color.ExcaliburBlue // Мигание
     }),
 }).then(() => {
+  const menu = new Menu(game.currentScene);
     // Что-то можно сделать после старта
 });
 

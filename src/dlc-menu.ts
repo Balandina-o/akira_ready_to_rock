@@ -18,10 +18,10 @@ import { Resources } from "./resources";
 
 import { AkiraOfficialArt } from "./main-menu/AkiraOfficialArt";
 import { GameLogo } from "./main-menu/GameLogo";
-import { MenuBackground } from "./main-menu/MenuBackground";
+import { DlcMenuBackground } from "./dlc-menu/DlcMenuBackground";
 import { StartGameBtn } from "./main-menu/components/StartGameBtn";
 
-export class MainMenu extends Scene {
+export class DlcMenu extends Scene {
     startGame = new ScreenElement({
         x: 0,
         y: 0,
@@ -29,13 +29,11 @@ export class MainMenu extends Scene {
     });
 
     override onInitialize(engine: Engine): void {
-    const menuBackground = new MenuBackground();
-    const akiraOfficialArt = new AkiraOfficialArt();
+    const menuBackground = new DlcMenuBackground();
     const gameLogo = new GameLogo();
     const startGameBtn = new StartGameBtn();
 
     this.add(menuBackground); // Actors need to be added to a scene to be drawn
-    this.add(akiraOfficialArt);
     this.add(gameLogo);
     this.add(startGameBtn);
 
@@ -46,8 +44,8 @@ export class MainMenu extends Scene {
     }
 
     override onActivate(context: SceneActivationContext<unknown>): void {
-        Resources.MainMenuMusic.loop = true;
-        Resources.MainMenuMusic.play();
+        Resources.DlcMenuMusic.loop = true;
+        Resources.DlcMenuMusic.play();
     }
 
     override onDeactivate(context: SceneActivationContext): void {

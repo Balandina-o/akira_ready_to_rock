@@ -14,6 +14,7 @@ import {
 } from "excalibur";
 
 import { Resources } from "../resources";
+import { game } from "@/main";
 
 
 export class AkiraOfficialArt extends Actor {
@@ -58,6 +59,12 @@ export class AkiraOfficialArt extends Actor {
     // Sometimes you want to click on an actor!
     this.on('pointerdown', evt => {
       console.log('You clicked the actor @', evt.worldPos.toString());
+      Resources.MainMenuMusic.stop();
+      // Переходим на страницу с уровнем
+      // Todo Добавить анимацию
+      // setTimeout( () => {
+        game.goToScene('dlcMenu');
+      // }, 1000)
     });
   }
 

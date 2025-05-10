@@ -5,15 +5,15 @@ import { Actor, vec } from "excalibur";
 
 import { Resources } from "../resources";
 
-export class MenuBackground extends Actor {
+export class DlcMenuBackground extends Actor {
   constructor() {
     super({
-      name: 'MenuBackground',
+      name: 'DlcMenuBackground',
       pos: vec(600, 400),
     });
   }
 
   override onInitialize() {
-    this.graphics.add(Resources.MainMenuBackground.toSprite());
+    this.graphics.add(Resources.DlcMenuBackground.toSprite());
   }
 }

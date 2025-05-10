@@ -19,7 +19,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader"]
       },
       {
         test: /\.js$/,
@@ -48,9 +48,12 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
-      title: "Excalibur Webpack Sample",
+      title: 'Excalibur Webpack Sample',
+      favicon: './favicon.ico',
       template: 'index.html',
-      inject: 'body'
+      inject: 'body',
+      templateParameters: {css: './css/style.css'}
     }),
   ],
 };
+д

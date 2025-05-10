@@ -46,14 +46,14 @@ export class MyLevel extends Scene {
 
     override onPreLoad(loader: DefaultLoader): void {
         // Add any scene specific resources to load
-        // Resources.PreviewMusic.stop();
+        // Resources.MainMenuMusic.stop();
     }
 
     override onActivate(context: SceneActivationContext<unknown>): void {
         // Called when Excalibur transitions to this scene
         // Only 1 scene is active at a time
-        Resources.BackgroundMusic.loop = true;
-        Resources.BackgroundMusic.play();
+        Resources.LevelBackgroundMusic.loop = true;
+        Resources.LevelBackgroundMusic.play();
     }
 
     override onDeactivate(context: SceneActivationContext): void {

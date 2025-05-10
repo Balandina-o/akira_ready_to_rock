@@ -3,23 +3,28 @@
 import {ImageSource, Loader, Sound } from "excalibur";
 
 import AkiraPath from './images/josuke.png';
+
 import akiraOfficialArtPath from './images/akira_preview.png';
-import menuBackgroundPath from './images/menu_background.png';
+import mainMenuBackgroundPath from './images/menu_background.png';
+import dlcMenuBackgroundPath from './images/temple_dlc_menu_background.jpg';
+
 import gameLogoPath from './images/game_logo.png';
 import startGameBtnPath from './images/start_game_btn.png';
 import startGameBtnHoverPath from './images/start_game_btn_hover.png';
 
 import lightningPointPath from './images/lightning.png';
 
-import backgroundPreviewMusicPath from './sounds/rhchp_can_not_stop.ogg';
-import backgroundLevelMusicPath from './sounds/the_strokes_reptilia_instrumental.ogg';
+import backgroundMainMenuMusicPath from './sounds/rhchp_can_not_stop.ogg';
+import backgroundDlcMenuMusicPath from './sounds/plenka_voltage.ogg';
+import levelBackgroundMusicPath from './sounds/the_strokes_reptilia_instrumental.ogg';
 
 
 // It is convenient to put your resources in one place
 export const Resources = {
   Akira: new ImageSource(AkiraPath),
   AkiraOfficialArt: new ImageSource(akiraOfficialArtPath),
-  MenuBackground: new ImageSource(menuBackgroundPath),
+  MainMenuBackground: new ImageSource(mainMenuBackgroundPath),
+  DlcMenuBackground: new ImageSource(dlcMenuBackgroundPath),
   // Todo Сделать что-то с фоном. Код ниже не работает {
   //   wrapping: ImageWrapping.Mirror
   // })
@@ -30,8 +35,9 @@ export const Resources = {
 
   LightningPoint: new ImageSource(lightningPointPath),
   
-  PreviewMusic: new Sound(backgroundPreviewMusicPath),
-  BackgroundMusic: new Sound(backgroundLevelMusicPath)
+  MainMenuMusic: new Sound(backgroundMainMenuMusicPath),
+  DlcMenuMusic: new Sound(backgroundDlcMenuMusicPath),
+  LevelBackgroundMusic: new Sound(levelBackgroundMusicPath)
 } as const;
 
 // We build a loader and add all of our resources to the boot loader

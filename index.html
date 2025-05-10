@@ -2,12 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akira ready to rock</title>
-    <link rel="stylesheet" href="./main.css">
+    <base href="/"> 
+    <link type="text/css" rel="stylesheet" href="/css/style.css"/>
+</head>
 </head>
 <body>
+    <main>
+        <canvas id="game"></canvas>
+        <div id="menu" class="menu excalibur-scale hide">
+            <h3>Menu</h3>
+            <button id="add-unit">Add Unit</button>
+            <button id="remove-unit">Remove Unit</button>
+        </div>
+    </main>
     <!-- webpack injects the script tag into body using HtmlWebPackPlugin -->
 </body>
 </html>
+
+<!-- <style>
+    body {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: 100vh;
+        background-color: black;
+    }
+</style> -->
