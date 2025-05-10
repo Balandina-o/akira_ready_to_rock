@@ -20,6 +20,8 @@ import { AkiraOfficialArt } from "./main-menu/AkiraOfficialArt";
 import { GameLogo } from "./main-menu/GameLogo";
 import { DlcMenuBackground } from "./dlc-menu/DlcMenuBackground";
 import { StartGameBtn } from "./main-menu/components/StartGameBtn";
+import { Menu } from "./ui";
+import { game } from "./main";
 
 export class DlcMenu extends Scene {
     startGame = new ScreenElement({
@@ -44,6 +46,7 @@ export class DlcMenu extends Scene {
     }
 
     override onActivate(context: SceneActivationContext<unknown>): void {
+        const menu = new Menu(game.currentScene);
         Resources.DlcMenuMusic.loop = true;
         Resources.DlcMenuMusic.play();
     }

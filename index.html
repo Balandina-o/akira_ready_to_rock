@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akira ready to rock</title>
-    <base href="/"> 
-    <link type="text/css" rel="stylesheet" href="/css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
 </head>
 </head>
 <body>
     <main>
         <canvas id="game"></canvas>
+        <div id="dialog" class="dialog">
+            <div>
+                <div id="dialog-text">
+                    text
+                </div>
+                <div id="dialog-button">
+                    button
+                </div>
+            </div>
+            <div id="dialog-akira">
+                akira
+            </div>
+        </div>
         <div id="menu" class="menu excalibur-scale hide">
             <h3>Menu</h3>
             <button id="add-unit">Add Unit</button>
@@ -20,15 +32,3 @@
     <!-- webpack injects the script tag into body using HtmlWebPackPlugin -->
 </body>
 </html>
-
-<!-- <style>
-    body {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        height: 100vh;
-        background-color: black;
-    }
-</style> -->

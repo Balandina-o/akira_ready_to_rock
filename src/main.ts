@@ -15,6 +15,8 @@ import { MyLevel } from "./level";
 import { DlcMenu } from "./dlc-menu";
 import { Menu } from "./ui";
 
+import '../style.css'
+
 
 export const game = new Engine({
   width: 1200, // the width of the canvas
@@ -58,7 +60,6 @@ game.start('mainMenu', { // name of the start scene 'start'
         color: Color.ExcaliburBlue // Мигание
     }),
 }).then(() => {
-  const menu = new Menu(game.currentScene);
     // Что-то можно сделать после старта
 });
 

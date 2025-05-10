@@ -1,6 +1,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/main.ts",
@@ -19,7 +20,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
       },
       {
         test: /\.js$/,
@@ -47,13 +48,19 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // all options are optional
+      filename: 'style.css',
+      chunkFilename: '[id].css',
+      ignoreOrder: false, // Enable to remove warnings about conflicting order
+    }),
     new HtmlWebPackPlugin({
       title: 'Excalibur Webpack Sample',
       favicon: './favicon.ico',
       template: 'index.html',
       inject: 'body',
-      templateParameters: {css: './css/style.css'}
+      templateParameters: {css: 'style.css'}
     }),
   ],
 };
-д
