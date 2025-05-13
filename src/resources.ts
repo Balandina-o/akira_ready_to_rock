@@ -5,6 +5,8 @@ import {ImageSource, Loader, Sound } from "excalibur";
 import AkiraPath from './images/josuke.png';
 
 import akiraOfficialArtPath from './images/akira_preview.png';
+import akiraDlcTempArtPath from './images/akira_dlc_temp_1.png';
+
 import mainMenuBackgroundPath from './images/menu_background.png';
 import dlcMenuBackgroundPath from './images/temple_dlc_menu_background.jpg';
 
@@ -23,6 +25,8 @@ import levelBackgroundMusicPath from './sounds/the_strokes_reptilia_instrumental
 export const Resources = {
   Akira: new ImageSource(AkiraPath),
   AkiraOfficialArt: new ImageSource(akiraOfficialArtPath),
+  AkiraDlcTempArt: new ImageSource(akiraDlcTempArtPath),
+  
   MainMenuBackground: new ImageSource(mainMenuBackgroundPath),
   DlcMenuBackground: new ImageSource(dlcMenuBackgroundPath),
   // Todo Сделать что-то с фоном. Код ниже не работает {

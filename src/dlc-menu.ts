@@ -16,12 +16,12 @@ import {
 
 import { Resources } from "./resources";
 
-import { AkiraOfficialArt } from "./main-menu/AkiraOfficialArt";
 import { GameLogo } from "./main-menu/GameLogo";
 import { DlcMenuBackground } from "./dlc-menu/DlcMenuBackground";
 import { StartGameBtn } from "./main-menu/components/StartGameBtn";
 import { Menu } from "./ui";
 import { game } from "./main";
+import { AkiraDlcTempArt } from "./dlc-menu/AkiraDlcTempArt";
 
 export class DlcMenu extends Scene {
     startGame = new ScreenElement({
@@ -32,11 +32,13 @@ export class DlcMenu extends Scene {
 
     override onInitialize(engine: Engine): void {
     const menuBackground = new DlcMenuBackground();
+    const akiraOfficialArt = new AkiraDlcTempArt();
     const gameLogo = new GameLogo();
     const startGameBtn = new StartGameBtn();
 
     this.add(menuBackground); // Actors need to be added to a scene to be drawn
     this.add(gameLogo);
+    this.add(akiraOfficialArt);
     this.add(startGameBtn);
 
     this.add(this.startGame);
