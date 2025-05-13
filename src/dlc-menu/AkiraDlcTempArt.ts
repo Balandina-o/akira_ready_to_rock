@@ -9,6 +9,7 @@ import {
   Collider,
   CollisionContact,
   Engine,
+  ScreenElement,
   Side,
   vec
 } from "excalibur";
@@ -17,21 +18,12 @@ import { Resources } from "../resources";
 import { game } from "@/main";
 
 
-export class AkiraDlcTempArt extends Actor {
+export class AkiraDlcTempArt extends ScreenElement {
   constructor() {
     super({
-      // Giving your actor a name is optional, but helps in debugging using the dev tools or debug mode
-      // https://github.com/excaliburjs/excalibur-extension/
-      // Chrome: https://chromewebstore.google.com/detail/excalibur-dev-tools/dinddaeielhddflijbbcmpefamfffekc
-      // Firefox: https://addons.mozilla.org/en-US/firefox/addon/excalibur-dev-tools/
       name: 'AkiraDlcTempArt',
-      pos: vec(0, 550),
-      width: 1,
-      height: 1,
-      // anchor: vec(0, 0), // Actors default center colliders and graphics with anchor (0.5, 0.5)
-      // collisionType: CollisionType.Active,
-      // Collision Type Active means this participates in collisions read more
-      // https://excaliburjs.com/docs/collisiontypes
+      x: -580,
+      y: -100,
     });
   }
 

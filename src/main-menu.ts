@@ -20,6 +20,8 @@ import { AkiraOfficialArt } from "./main-menu/AkiraOfficialArt";
 import { GameLogo } from "./main-menu/GameLogo";
 import { MenuBackground } from "./main-menu/MenuBackground";
 import { StartGameBtn } from "./main-menu/components/StartGameBtn";
+import { DialogueBackground } from "./dialogue/DialogueBackground";
+import { game } from "./main";
 
 export class MainMenu extends Scene {
     startGame = new ScreenElement({
@@ -46,6 +48,7 @@ export class MainMenu extends Scene {
     }
 
     override onActivate(context: SceneActivationContext<unknown>): void {
+        const menu1 = new DialogueBackground(game.currentScene, ['65656554', '2343434', 'end woho3443o']);
         Resources.MainMenuMusic.loop = true;
         Resources.MainMenuMusic.play();
     }
