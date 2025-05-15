@@ -12,38 +12,35 @@ export class DialogueBackground {
     rootElement: HTMLElement;
     dialogButton: HTMLElement;
     dialogText: HTMLElement;
+
+    shadow1: HTMLElement;
+
     numberDialog = -1;
 
     currentWorldPos: Vector = vec(0, 0);
 
     constructor(public scene: Scene, messages: string[]) {
-        scene.input.pointers.on('down', (evt) => {
-          console.log('32423422423');
-            this.show();
-            this.currentWorldPos = scene.engine.screen.pageToWorldCoordinates(vec(evt.pagePos.x, evt.pagePos.y));
-            document.documentElement.style.setProperty('--pointer-x', evt.pagePos.x.toString() + 'px');
-            document.documentElement.style.setProperty('--pointer-y', evt.pagePos.y.toString() + 'px');
-        });
-
         const rootElement = document.getElementById('dialog');
         const dialogButton = document.getElementById('dialog-button');
         const dialogText = document.getElementById('dialog-text');
+
+        const shadow1 = document.getElementById('shadow-background-plug') 
+
+      setTimeout( () => {
+          this.show();
+          this.anotherFunc();
+      }, 0)
+
 
         if (rootElement && dialogButton && dialogText) {
             this.rootElement = rootElement;
             this.dialogButton = dialogButton;
             this.dialogText = dialogText;
+            this.shadow1 = shadow1;
             this.messages = messages;
 
             this.dialogButton.addEventListener('click', evt => {
-              this.dialogText.textContent = '';
-              this.numberDialog++;
-              if( this.numberDialog < this.messages.length) {
-                this.typeWriter()
-              } else {
-                this.hide();
-              }
-              // this.dialogText.textContent = messages[this.numberDialog];
+              this.anotherFunc();
             });
 
             // this.removeUnitButton.addEventListener('click', evt => {
@@ -53,6 +50,18 @@ export class DialogueBackground {
             throw Error("Could not initialize menu, element with id='menu'");
         }
     }
+
+anotherFunc(){
+                this.dialogText.textContent = '';
+              this.numberDialog++;
+              if( this.numberDialog < this.messages.length) {
+                this.typeWriter()
+              } else {
+                this.hide();
+              }
+              // this.dialogText.textContent = messages[this.numberDialog];
+}
+
 typeWriter() {
   var i = 0;
   var speed = 50;
@@ -70,12 +79,14 @@ typeWriter() {
 }
 
     show() {
-        this.rootElement.classList.remove('hide');
-        this.rootElement.classList.add('show');
+        this.shadow1.classList.remove('element-hide')
+        this.rootElement.classList.remove('expansion-hide')
+        this.rootElement.classList.add('element-show');
     }
 
     hide() {
-        this.rootElement.classList.remove('show');
-        this.rootElement.classList.add('hide');
+        this.rootElement.classList.remove('element-show');
+        this.rootElement.classList.add('expansion-hide')
+        this.shadow1.classList.add('element-hide');
     }
 }

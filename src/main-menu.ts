@@ -48,7 +48,15 @@ export class MainMenu extends Scene {
     }
 
     override onActivate(context: SceneActivationContext<unknown>): void {
-        const menu1 = new DialogueBackground(game.currentScene, ['65656554', '2343434', 'end woho3443o']);
+        // Запускаем приветственный диалог
+        setTimeout( () => {
+            new DialogueBackground(game.currentScene, [
+                'ПРивеТ! Это Отоиши Акира на связи, если ты запустил эту игру, то ты явно готов пошуметь и взорвать парочку сцен',
+                '*гитарный риф*',
+                'go, rockstar!!'
+            ]);
+        }, 1000 )
+
         Resources.MainMenuMusic.loop = true;
         Resources.MainMenuMusic.play();
     }

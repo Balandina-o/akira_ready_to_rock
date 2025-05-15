@@ -1,34 +1,30 @@
+<!-- Akira ready to rock html-structure -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <title>Akira ready to rock</title>
     <link type="text/css" rel="stylesheet" href="style.css"/>
 </head>
 </head>
 <body>
-    <main>
-        <canvas id="game"></canvas>
-        <div id="dialog" class="dialog hide">
-            <div>
-                <div id="dialog-text">
-                    <h1>The cat and the hat.</h1>
-                </div>
-                <div id="dialog-button">
-                    button
-                </div>
-            </div>
-            <div id="dialog-akira">
-                akira
-            </div>
+    <div id="shadow-background-plug" class = "shadow element-hide"></div>
+    <div id="dialog" class="dialog expansion-hide">
+        <div id="dialog-text"></div>
+        <div id="dialog-button-container">
+            <input id="dialog-button" class="styled" type="button" value="Далее >>" />
+            <input id="dialog-button" class="styled" type="button" value="Пропустить >>" />
         </div>
-        <div id="menu" class="menu excalibur-scale hide">
-            <h3>Menu</h3>
-            <button id="add-unit">Add Unit</button>
-            <button id="remove-unit">Remove Unit</button>
-        </div>
-    </main>
+        <!-- <div id="dialog-akira">
+            akira
+        </div> -->
+    </div>
+    <div id="menu" class="menu excalibur-scale element-hide">
+        <h3>Menu</h3>
+        <button id="add-unit">Add Unit</button>
+        <button id="remove-unit">Remove Unit</button>
+    </div>
     <!-- webpack injects the script tag into body using HtmlWebPackPlugin -->
 </body>
 </html>
