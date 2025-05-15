@@ -19,6 +19,7 @@ Quick start
 Меня никто не спрашивал, но в игре задействованы инструментальные версии следующих песен:
 1. Главное меню - Red Hot Chili Peppers – Can't Stop (Гениально, правда?)
 2. Игровой уровень - The Strokes – Reptilia
+3. Главное меню DLC Noise and Voltage - plenka – Voltage
 
 ---
 
