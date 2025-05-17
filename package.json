@@ -1,10 +1,10 @@
 {
-  "name": "akira",
+  "name": "akira_ready_to_rock",
   "version": "0.0.0",
   "private": true,
-  "description": "",
+  "description": "2D-game about Akira Otoishi",
   "homepage": "http://Balandina-o.github.io/akira_ready_to_rock",
-  "main": "main.js",
+  "main": "main.ts",
   "scripts": {
     "test": "npm run build:prod && npx playwright test",
     "test:integration-update": "npx playwright test --update-snapshots",
@@ -16,7 +16,7 @@
     "deploy": "gh-pages -d dist",
     "serve": "serve dist"
   },
-  "author": "",
+  "author": "balandina-o",
   "license": "",
   "devDependencies": {
     "@playwright/test": "^1.49.0",
@@ -24,6 +24,7 @@
     "clean-webpack-plugin": "4.0.0",
     "compression-webpack-plugin": "11.1.0",
     "css-loader": "7.1.2",
+    "gh-pages": "6.3.0",
     "html-webpack-plugin": "5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
     "serve": "14.2.4",
