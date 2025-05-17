@@ -1,4 +1,4 @@
-/** Модель экспортирует ресурсы, задействуемые в игре. */
+/** Модуль экспортирует ресурсы, задействуемые в игре. */
 
 import {ImageSource, Loader, Sound } from "excalibur";
 
@@ -15,6 +15,7 @@ import startGameBtnPath from './images/start_game_btn.png';
 import startGameBtnHoverPath from './images/start_game_btn_hover.png';
 
 import lightningPointPath from './images/lightning.png';
+import akiraDialogPath from './images/akira-dialog.jpg';
 
 import backgroundMainMenuMusicPath from './sounds/rhchp_can_not_stop.ogg';
 import backgroundDlcMenuMusicPath from './sounds/plenka_voltage.ogg';
@@ -38,7 +39,8 @@ export const Resources = {
   StartGameBtnHover: new ImageSource(startGameBtnHoverPath),
 
   LightningPoint: new ImageSource(lightningPointPath),
-  
+  akiraDialog: new ImageSource(akiraDialogPath),
+
   MainMenuMusic: new Sound(backgroundMainMenuMusicPath),
   DlcMenuMusic: new Sound(backgroundDlcMenuMusicPath),
   LevelBackgroundMusic: new Sound(levelBackgroundMusicPath)

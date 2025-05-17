@@ -15,7 +15,7 @@ import { MyLevel } from "./level";
 import { DlcMenu } from "./dlc-menu";
 import { Menu } from "./ui";
 
-import '../style.css'
+import '../style.scss'
 
 
 export const game = new Engine({

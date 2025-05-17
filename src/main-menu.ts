@@ -20,7 +20,7 @@ import { AkiraOfficialArt } from "./main-menu/AkiraOfficialArt";
 import { GameLogo } from "./main-menu/GameLogo";
 import { MenuBackground } from "./main-menu/MenuBackground";
 import { StartGameBtn } from "./main-menu/components/StartGameBtn";
-import { DialogueBackground } from "./dialogue/DialogueBackground";
+import { Dialogue } from "./dialogue/Dialogue";
 import { game } from "./main";
 
 export class MainMenu extends Scene {
@@ -50,11 +50,11 @@ export class MainMenu extends Scene {
     override onActivate(context: SceneActivationContext<unknown>): void {
         // Запускаем приветственный диалог
         setTimeout( () => {
-            new DialogueBackground(game.currentScene, [
+            new Dialogue( [
                 'ПРивеТ! Это Отоиши Акира на связи, если ты запустил эту игру, то ты явно готов пошуметь и взорвать парочку сцен',
                 '*гитарный риф*',
                 'go, rockstar!!'
-            ]);
+            ] );
         }, 1000 )
 
         Resources.MainMenuMusic.loop = true;

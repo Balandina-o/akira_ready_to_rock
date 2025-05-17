@@ -5,6 +5,7 @@
   "description": "2D-game about Akira Otoishi",
   "homepage": "http://Balandina-o.github.io/akira_ready_to_rock",
   "main": "main.ts",
+
   "scripts": {
     "test": "npm run build:prod && npx playwright test",
     "test:integration-update": "npx playwright test --update-snapshots",
@@ -18,17 +19,25 @@
   },
   "author": "balandina-o",
   "license": "",
+
+  "dependencies": {
+    "excalibur": "0.30.0-alpha.1295"
+  },
+
   "devDependencies": {
-    "@playwright/test": "^1.49.0",
-    "@types/node": "^22.10.0",
+    "@playwright/test": "1.49.0",
+    "@types/node": "22.10.0",
     "clean-webpack-plugin": "4.0.0",
     "compression-webpack-plugin": "11.1.0",
     "css-loader": "7.1.2",
     "gh-pages": "6.3.0",
     "html-webpack-plugin": "5.6.3",
-    "mini-css-extract-plugin": "^2.9.2",
+    "mini-css-extract-plugin": "2.9.2",
+    "sass": "1.89.0",
+    "sass-loader": "16.0.5",
     "serve": "14.2.4",
     "source-map-loader": "5.0.0",
+    "style-loader": "4.0.0",
     "terser-webpack-plugin": "5.3.14",
     "ts-loader": "9.5.2",
     "typescript": "5.8.3",
@@ -37,9 +46,7 @@
     "webpack-dev-server": "5.2.1",
     "webpack-merge": "6.0.1"
   },
-  "dependencies": {
-    "excalibur": "0.30.0-alpha.1295"
-  },
+
   "repository": {},
   "bugs": {}
 }

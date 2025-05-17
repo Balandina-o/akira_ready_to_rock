@@ -19,6 +19,14 @@ module.exports = {
         type: "asset/resource",
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
+      },
+      {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader"]
       },
@@ -49,18 +57,16 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // all options are optional
-      filename: 'style.css',
+      filename: 'style.scss',
       chunkFilename: '[id].css',
-      ignoreOrder: false, // Enable to remove warnings about conflicting order
+      ignoreOrder: false,
     }),
     new HtmlWebPackPlugin({
       title: 'Excalibur Webpack Sample',
       favicon: './favicon.ico',
       template: 'index.html',
       inject: 'body',
-      templateParameters: {css: 'style.css'}
+      templateParameters: { css: 'style.scss' }
     }),
   ],
 };
