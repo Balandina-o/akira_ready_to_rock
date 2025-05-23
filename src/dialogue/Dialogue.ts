@@ -1,6 +1,10 @@
 /** Модeль диалога с пользователем. */
 
-export class Dialogue {
+
+import { AkiraOfficialArt } from "@/main-menu/AkiraOfficialArt";
+import { Scene } from "excalibur";
+
+export class Dialogue extends Scene {
   // Массив сообщений, адресованных пользователю
   messages: string[];
 
@@ -15,9 +19,10 @@ export class Dialogue {
   messageCount = -1;
 
   constructor( messages: string[] ) {
-    this.messages = messages;
+      super();
+        this.messages = messages;
 
-    this.onInit()
+        this.onInit()
     }
 
     onInit(){
@@ -36,8 +41,12 @@ export class Dialogue {
         });
 
         document.addEventListener( 'keyup', event => {
+
             console.log( 'ты нажал enter, мои поздравления!' );
         });
+
+        const akiraOfficialArt = new AkiraOfficialArt();
+        this.add(akiraOfficialArt);
     }
 
     skipAllMessages(){
