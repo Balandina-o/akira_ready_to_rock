@@ -15,7 +15,7 @@ Project Description
 Quick start
 ---
 <!-- "Быстрый старт".. эээ, ну, вы можете поиграть в нее на [GitHub-pages](https://balandina-o.github.io/akira_ready_to_rock/) -->
-(I ❤️ GitHub-pages).<br>
+<!-- (I ❤️ GitHub-pages).<br>-->
 Меня никто не спрашивал, но в игре задействованы инструментальные версии следующих песен:
 1. Главное меню - Red Hot Chili Peppers – Can't Stop (Гениально, правда?)
 2. Игровой уровень - The Strokes – Reptilia
