@@ -22,6 +22,8 @@ import { MenuBackground } from "./main-menu/MenuBackground";
 import { StartGameBtn } from "./main-menu/components/StartGameBtn";
 import { Dialogue } from "./dialogue/Dialogue";
 import { game } from "./main";
+import { DlcBtn } from "./main-menu/components/DlcBtn";
+import { SettingsBtn } from "./main-menu/components/SettingsBtn";
 
 export class MainMenu extends Scene {
     startGame = new ScreenElement({
@@ -35,11 +37,15 @@ export class MainMenu extends Scene {
     const akiraOfficialArt = new AkiraOfficialArt();
     const gameLogo = new GameLogo();
     const startGameBtn = new StartGameBtn();
+    const dlcBtn = new DlcBtn();
+    const settingsBtn = new SettingsBtn();
 
     this.add(menuBackground); // Actors need to be added to a scene to be drawn
     this.add(akiraOfficialArt);
     this.add(gameLogo);
     this.add(startGameBtn);
+    this.add(dlcBtn);
+    this.add(settingsBtn);
 
     this.add(this.startGame);
     }

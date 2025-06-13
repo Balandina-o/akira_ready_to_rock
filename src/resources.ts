@@ -13,6 +13,8 @@ import dlcMenuBackgroundPath from './images/temple_dlc_menu_background.jpg';
 import gameLogoPath from './images/game_logo.png';
 import startGameBtnPath from './images/start_game_btn.png';
 import startGameBtnHoverPath from './images/start_game_btn_hover.png';
+import settingsBtnPath from './images/settings_btn.png';
+import settingsBtnHoverPath from './images/settings_btn_hover.png';
 
 import lightningPointPath from './images/lightning.png';
 import akiraDialogPath from './images/akira-dialog.jpg';
@@ -37,6 +39,8 @@ export const Resources = {
   GameLogo: new ImageSource(gameLogoPath),
   StartGameBtn: new ImageSource(startGameBtnPath),
   StartGameBtnHover: new ImageSource(startGameBtnHoverPath),
+  SettingsBtn: new ImageSource(settingsBtnPath),
+  SettingsBtnHover: new ImageSource(settingsBtnHoverPath),
 
   LightningPoint: new ImageSource(lightningPointPath),
   akiraDialog: new ImageSource(akiraDialogPath),
